@@ -66,33 +66,37 @@ public String login(String userId, String userPassword, HttpSession session) {
 ![전문가 반려동물주 테이블 스냅샷](https://user-images.githubusercontent.com/37195463/134910650-a508e15d-2013-4fc8-a259-44d94b95ace2.png)
 
 ## 8. SPRING BOOT 구조
-+ Controller : 
-+	UserController : 반려동물주 회원가입 신청, 로그인 페이지 연결, 로그인 확인, 로그아웃, 채팅리스트 확인
-+	ExpertController : 전문가 회원가입 신청, 로그인 페이지 연결, 로그인 확인, 로그아웃, 채팅리스트 확인
-+	ChatController : 채팅, 채팅내역 확인
-+	SearchController : 반려동물주와 전문가 매칭
-	
++ Controller
+```
+UserController : 반려동물주 회원가입 신청, 로그인 페이지 연결, 로그인 확인, 로그아웃, 채팅리스트 확인
+ExpertController : 전문가 회원가입 신청, 로그인 페이지 연결, 로그인 확인, 로그아웃, 채팅리스트 확인
+ChatController : 채팅, 채팅내역 확인
+SearchController : 반려동물주와 전문가 매칭
+```	
     
-+ Model : 
-+	User : 반려동물주 아이디, 비밀번호, 관심사항...
-+	Expert : 전문가 아이디, 비밀번호, 자격사항...
-+	Chat : 채팅내역, 채팅날짜
-+	Grade : 평점점수, 평점 코멘트
-+	InterestField01 : 반려동물주의 관심동물
-+	InterestField02 : 반려동물주의 관심분야
-+   ExpertiseField01 : 전문가의 관심동물
-+	ExpertiseField02 : 전문가의 관심분야
++ Model
+```
+User : 반려동물주 아이디, 비밀번호, 관심사항...
+Expert : 전문가 아이디, 비밀번호, 자격사항...
+Chat : 채팅내역, 채팅날짜
+Grade : 평점점수, 평점 코멘트
+InterestField01 : 반려동물주의 관심동물
+InterestField02 : 반려동물주의 관심분야
+ExpertiseField01 : 전문가의 관심동물
+ExpertiseField02 : 전문가의 관심분야
+```
 
-+ Repository :  
-+	UserRepository
-+	ExpertRepository 
-+	ChatRepository 
-+	SearchRepository
-+   InterestField01Repository
-+	InterestField02Repository
-+	ExpertiseField01Repository
-+	ExpertiseField02Repository
-
++ Repository 
+```
+UserRepository
+ExpertRepository 
+ChatRepository
+SearchRepository
+InterestField01Repository
+InterestField02Repository
+ExpertiseField01Repository
+ExpertiseField02Repository
+```
 
 ## 9. 작동영상
 [![Demo CountPages alpha](https://j.gifs.com/p8rxX6.gif)](https://www.youtube.com/watch?v=DRu6QQeXOZY)
