@@ -103,5 +103,5 @@ ExpertiseField02Repository
 
 
 ## 10. 보완해야할 점
-+ Service 계층을 구현하여 Controller단과 Service단의 역할을 분리하여 구현해야 함.
++ Service 계층을 새로 구성해야 . Controller 계층과 Service 계층의 역할을 분리하여 구현해야 함.
 + 불필요한 소스 및 클래스 정리 필요.
