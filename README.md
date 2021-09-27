@@ -1,5 +1,7 @@
 # 반려동물 전문가와의 1:1상담 서비스 (5인)
 반려동물주와 다양한 직종의 전문가들을 연결시켜주고 이국적인 반려동물에 대한 접근성 높은 서비스 제공
+![프로젝트 순서](https://user-images.githubusercontent.com/37195463/134910707-44837743-2301-4e59-ac58-f4c3cf3df763.png)
+
 
 ## 주요내용
 + 사용자의 관심사항에 대한 데이터를 DTO(Data Transfer Object)에 입력 받아 데이터베이스(MySQL)에 저장
@@ -18,6 +20,7 @@
 + MySQL
 + Ajax
 + Mustache
+
 
 ## 1. 첫 화면
 ![첫화면](https://user-images.githubusercontent.com/37195463/134910441-0dbe95ff-6a76-47b6-afd0-1ea838321c21.png)
@@ -62,6 +65,39 @@ public String login(String userId, String userPassword, HttpSession session) {
 
 ![전문가 반려동물주 테이블 스냅샷](https://user-images.githubusercontent.com/37195463/134910650-a508e15d-2013-4fc8-a259-44d94b95ace2.png)
 
-## 8. 작동영상
-![프로젝트 순서](https://user-images.githubusercontent.com/37195463/134910707-44837743-2301-4e59-ac58-f4c3cf3df763.png)
+## 8. SPRING BOOT 구조
++ Controller : 
++	UserController : 반려동물주 회원가입 신청, 로그인 페이지 연결, 로그인 확인, 로그아웃, 채팅리스트 확인
++	ExpertController : 전문가 회원가입 신청, 로그인 페이지 연결, 로그인 확인, 로그아웃, 채팅리스트 확인
++	ChatController : 채팅, 채팅내역 확인
++	SearchController : 반려동물주와 전문가 매칭
+	
+    
++ Model : 
++	User : 반려동물주 아이디, 비밀번호, 관심사항...
++	Expert : 전문가 아이디, 비밀번호, 자격사항...
++	Chat : 채팅내역, 채팅날짜
++	Grade : 평점점수, 평점 코멘트
++	InterestField01 : 반려동물주의 관심동물
++	InterestField02 : 반려동물주의 관심분야
++   ExpertiseField01 : 전문가의 관심동물
++	ExpertiseField02 : 전문가의 관심분야
+
++ Repository :  
++	UserRepository
++	ExpertRepository 
++	ChatRepository 
++	SearchRepository
++   InterestField01Repository
++	InterestField02Repository
++	ExpertiseField01Repository
++	ExpertiseField02Repository
+
+
+## 9. 작동영상
 [![Demo CountPages alpha](https://j.gifs.com/p8rxX6.gif)](https://www.youtube.com/watch?v=DRu6QQeXOZY)
+
+
+## 10. 보완해야할 점
++ Service 계층을 구현하여 Controller단과 Service단의 역할을 분리하여 구현해야 함.
++ 불필요한 소스 및 클래스 정리 필요.
