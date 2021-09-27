@@ -1,27 +1,67 @@
-# 반려동물 전문가와의 1:1상담 서비스(5인)
-반려동물주와 다양한 직종의 전문가들을 연결시켜주고 이국적인 반려동물에 대한 접근성 높은 서비스 제공  
+# 반려동물 전문가와의 1:1상담 서비스 (5인)
+반려동물주와 다양한 직종의 전문가들을 연결시켜주고 이국적인 반려동물에 대한 접근성 높은 서비스 제공
 
-![pic0](https://user-images.githubusercontent.com/37195463/115142813-bbae0700-a07e-11eb-89f0-843dd3e3424c.png)
-![pic1](https://user-images.githubusercontent.com/37195463/115142782-93260d00-a07e-11eb-9e38-2e46b1405ead.png)
-![pic2](https://user-images.githubusercontent.com/37195463/115142783-93bea380-a07e-11eb-87a9-865f73569d5c.png)
-![pic3](https://user-images.githubusercontent.com/37195463/115142816-be106100-a07e-11eb-8e54-4c46130f8c9f.png)
+## 주요내용
++ 사용자의 관심사항에 대한 데이터를 DTO(Data Transfer Object)에 입력 받아 데이터베이스(MySQL)에 저장
++ 반려동물주의 관심사항이 전문가의 상담분야에 해당할 경우 해당 전문가를 매칭
++ Ajax를 이용하여 반려동물주와 전문가 간의 1:1 채팅 시스템 제공
++ 평점시스템을 이용하여 해당 전문가에 대한 상담 신뢰도 확인
 
-### 주요내용
-+ 사용자의 관심사항에 대한 데이터를 입력 받아 알맞은 전문가 추천
-+ Ajax를 통한 매칭된 전문가와의 1:1 채팅 시스템 제공
-+ AWS EC2와 RDS(MYSQL)와 연결 및 서비스 사용
-
-### 사용언어
-+ JAVA
+## 사용언어
++ JAVA 8
 + JavaScript
 + HTML/CSS
 
-### 사용 라이브러리 및 프레임워크
-+ Spring Boot
+## 사용 라이브러리 및 프레임워크
++ Spring Boot 2.0.4.RELEASE
 + Spring Data JPA
 + MySQL
 + Ajax
 + Mustache
 
-### 작동영상
+## 1. 첫 화면
+![첫화면](https://user-images.githubusercontent.com/37195463/134910441-0dbe95ff-6a76-47b6-afd0-1ea838321c21.png)
+
+
+## 2. 회원가입
+> 회원가입 시에 아이디, 패스워드와 같은 개인정보와 반려동물에 대한 관심사항을 선택할 수 있다. 전문가의 경우 자격분야, 자격증, 경력 년 수 그리고 사업장 위치를 지정 할 수 있다.
+
+![회원가입페이지3](https://user-images.githubusercontent.com/37195463/134910488-8edb897e-4298-4c94-8973-fa69c97adb2c.png)
+
+## 3. 로그인 및 메인 페이지
+> HttpSession 객체를 이용하여 로그인 유지, 외부접속 방지
+
+```
+@PostMapping("/login")
+public String login(String userId, String userPassword, HttpSession session) {
+    User user = userRepository.findByUserId(userId);
+    ...
+    session.setAttribute("sessionedUser", user);
+    return "redirect:/index";
+}
+```
+![로그인 첫화면](https://user-images.githubusercontent.com/37195463/134910500-5652ec3d-c7cc-4c81-8d70-03f83d9d26fc.png)
+
+## 4. 전문가 매칭 후 선택화면
+> 반려동물주가 전문가 매칭 서비스를 이용하게 된다면 본인의 관심동물, 관심사항과 연관되는 전문가들을 제안 받을 수 있다.
+
+![전문가 매칭 후 선택화면](https://user-images.githubusercontent.com/37195463/134910519-791b4f76-8910-4abd-b96a-dd005ffc6892.png)
+
+## 5. 전문가 상세정보
+> 네이버지도 API를 이용하여 전문가의 사업장 위치 표현 및 상세 프로필 제공
+
+![전문가 상세정보3](https://user-images.githubusercontent.com/37195463/134910539-c5980a7f-b738-4ae3-ac63-6548b660a0d3.png)
+
+
+## 6. 1:1 채팅
+> Ajax를 이용하여 반려동물주와 전문가의 1:1 채팅 시스템 제공
+
+![pic3](https://user-images.githubusercontent.com/37195463/134910608-3b17ec62-0f21-4767-8259-dd6382ce8dd0.png)
+
+## 7. 테이블 구조
+
+![전문가 반려동물주 테이블 스냅샷](https://user-images.githubusercontent.com/37195463/134910650-a508e15d-2013-4fc8-a259-44d94b95ace2.png)
+
+## 8. 작동영상
+![프로젝트 순서](https://user-images.githubusercontent.com/37195463/134910707-44837743-2301-4e59-ac58-f4c3cf3df763.png)
 [![Demo CountPages alpha](https://j.gifs.com/p8rxX6.gif)](https://www.youtube.com/watch?v=DRu6QQeXOZY)
