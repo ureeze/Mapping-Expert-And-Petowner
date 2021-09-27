@@ -87,13 +87,11 @@ public class SearchController {
 		}
 
 		for (String str1 : interestField01) {
-			System.out.println(str1);
 			InterestField01 intf01 = new InterestField01(user, str1);
 			interestField01Repository.save(intf01);
 			user.addInterestField01(intf01);
 		}
 		for (String str2 : interestField02) {
-			System.out.println(str2);
 			InterestField02 intf02 = new InterestField02(user, str2);
 			interestField02Repository.save(intf02);
 			user.addInterestField02(intf02);
