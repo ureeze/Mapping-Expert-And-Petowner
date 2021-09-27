@@ -10,17 +10,17 @@
 + Ajax를 이용하여 반려동물주와 전문가 간의 1:1 채팅 시스템 제공
 + 평점시스템을 이용하여 해당 전문가에 대한 상담 신뢰도 확인
 
-## 사용언어
-+ JAVA 8
-+ JavaScript
-+ HTML/CSS
+## 사용 언어
+> JAVA 8  
+> JavaScript  
+> HTML/CSS  
 
 ## 사용 라이브러리 및 프레임워크
-+ Spring Boot 2.0.4.RELEASE
-+ Spring Data JPA
-+ MySQL
-+ Ajax
-+ Mustache
+> Spring Boot 2.0.4.RELEASE  
+> Spring Data JPA  
+> MySQL  
+> Ajax  
+> Mustache  
 
 
 ## 1. 첫 화면
