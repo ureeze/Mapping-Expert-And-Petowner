@@ -15,10 +15,12 @@
 > JavaScript  
 > HTML/CSS  
 
+## 데이터베이스
+> MySQL
+
 ## 사용 라이브러리 및 프레임워크
 > Spring Boot 2.0.4.RELEASE  
 > Spring Data JPA  
-> MySQL  
 > Ajax  
 > Mustache  
 
